@@ -20,7 +20,7 @@ body {
     border-radius: 0;
     border-bottom: 10px solid black;
   }
-  
+
   .description{
     white-space: pre-wrap;
   }
@@ -57,7 +57,7 @@ body {
     color: white;
   }
   
-  .saveBtn {
+  .saveButton {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -65,8 +65,8 @@ body {
     color: white;
   }
   
-  .saveBtn i:hover {
-    font-size: 20px;
+  .saveButton i:hover {
+    font-size: 30px;
     transition: all .3s ease-in-out;
   }
   

@@ -1,121 +1,89 @@
-# Calender
-# Unit 05: Third-Party APIs
+# 05 Third-Party APIs: Work Day Scheduler
 
-## Overview
+## Your Task
 
-When developers find themselves repeating a task, they tend to look for a way to simplify their workflow. We saw earlier how CSS frameworks were developed to ensure consistency across applications and to expedite developer workflows. Tools with similar goals have emerged in the JavaScript ecosystem. 
+Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
-jQuery is a JavaScript library that simplifies DOM manipulation and event handling. It allows us to write fewer lines of code than if we were using plain old JavaScript. jQuery also provides a number of methods for animations and working with APIs.
+You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
 
-Some developers might point out that jQuery is slowly being phased out and replaced with front-end frameworks such as React. It's true that you might not see as many job listings for jQuery developers specifically, but the library is still widely used in both new and legacy code&mdash;so it's an important skill to acquire.
+## User Story
 
-## Key Topics
+```md
+AS AN employee with a busy schedule
+I WANT to add important events to a daily planner
+SO THAT I can manage my time effectively
+```
 
-We'll cover the following topics in this unit:
+## Acceptance Criteria
 
-* [jQuery](https://api.jquery.com/)
+```md
+GIVEN I am using a daily planner to create a schedule
+WHEN I open the planner
+THEN the current day is displayed at the top of the calendar
+WHEN I scroll down
+THEN I am presented with timeblocks for standard business hours
+WHEN I view the timeblocks for that day
+THEN each timeblock is color coded to indicate whether it is in the past, present, or future
+WHEN I click into a timeblock
+THEN I can enter an event
+WHEN I click the save button for that timeblock
+THEN the text for that event is saved in local storage
+WHEN I refresh the page
+THEN the saved events persist
+```
 
-  * [DOM traversal and manipulation](https://api.jquery.com/category/traversing/)
+The following animation demonstrates the application functionality:
 
-  * [Event handling](https://api.jquery.com/category/events/)
+![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
 
-* [Bootstrap](https://getbootstrap.com)
 
-* [Google fonts](https://fonts.google.com)
+## Grading Requirements
 
-* [jQuery UI](https://jqueryui.com/demos/)
+This homework is graded based on the following criteria: 
 
-* [Moment.js](https://momentjs.com/docs/)
+### Technical Acceptance Criteria: 40%
 
-  * **Note**: `Moment.js` has historically been the most popular date/time library but is no longer supported by its developers. We will still cover it in this unit, but look under the "Resources" section below for other alternatives.
+* Satisfies all of the above acceptance criteria plus the following:
 
-## Learning Objectives
+  * Uses a date utility library to work with date and time
 
-You'll be employer-competitive if you can do the following: 
+### Deployment: 32%
 
-* Explain and implement CDNs to leverage third-party APIs like CSS frameworks, JavaScript libraries, and custom fonts.
+* Application deployed at live URL
 
-* Use jQuery to perform DOM manipulation and traversals and implement interactivity using event handlers.
+* Application loads with no errors
 
-* Explain how to resolve issues related to dynamically generated HTML using jQuery.
+* Application GitHub URL submitted
 
-* Explain and implement the Bootstrap grid layout in HTML.
+* GitHub repo contains application code
 
-* Integrate Bootstrap components in HTML files to quickly build user interfaces.
+### Application Quality: 15%
 
-* Add custom styling to a CSS framework.
+* Application user experience is intuitive and easy to navigate
 
-* Implement jQuery UI to make a webpage more user-friendly.
+* Application user interface style is clean and polished
 
-* Use Moment.js to format dates and calculate time differences.
+* Application resembles the mock-up functionality provided in the homework instructions
 
-## Technical Interview Preparation
+### Repository Quality: 13%
 
-You will be employer-competitive if you are able to solve the following algorithms and successfully complete the assessments.
+* Repository has a unique name
 
-### Algorithms
+* Repository follows best practices for file structure and naming conventions
 
-Practicing algorithm-based interview questions is one of the best ways to prepare for interviews. Watch the `📹 Let's Code` video(s) for tips and tricks on how to solve the algorithm.
+* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
 
-* [01: Fizz Buzz](./03-Algorithms/01-fizz-buzz)
+* Repository contains multiple descriptive commit messages
 
-* [02: Max Num](./03-Algorithms/02-max-num)
+* Repository contains quality README file with description, screenshot, and link to deployed application
 
-  * [📹 Let's Code Max Num!](https://2u-20.wistia.com/medias/f9eao2cvjt)
+## Review
 
-* [03: Vowel Count](./03-Algorithms/03-vowel-count)
+You are required to submit the following for review:
 
-### Assessments
+* The URL of the deployed application
 
-Assess your knowledge by answering technical interview questions and solving coding challenges.
-
-* [Unit 05 Assessment](https://forms.gle/c4pv2qUatMXs5rzZA)
-
-## Homework
-
-In the homework for this unit, you'll create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS, powered by jQuery.
-
-## Career Connection
-
-This week's Career Services material can be found in this unit's [Career Connection folder](./04-Career-Connection/README.md). For more information about Career Services, including coding milestones, demo days, technical toolkits, workshops, and additional resources, visit the [Career Services website](https://mycareerspot.org/).
-
-## Heads-Up
-
-In the next unit, you'll use the jQuery AJAX method to make requests to server-side APIs. 
-
-## Resources
-
-Here are some additional resources to help solidify the topics covered in this unit.
-
-### Code Review Videos
-
-Watch the `📹 Code Review` video(s) to help you grasp the concept of each topic.
-
-  * [📹 Code Review: jQuery!](https://2u-20.wistia.com/medias/g63k1z1sb3)
-
-  * [📹 Code Review: Bootstrap!](https://2u-20.wistia.com/medias/e8xteir5a7)
-
-  * [📹 Code Review: jQuery UI and Moment.js!](https://2u-20.wistia.com/medias/5hp2hoodod)
-
-### Git Guide
-
-Refer to the Git Guide to review the git concept for this unit. Watch the `📹 Git Guide` video for an additional walkthrough of the git concept.
-
-  * 📖 [Git Guide: Git Revert](./01-Activities/27-Evr_Git-Revert)
-
-  * 📹 [Git Guide Video: Git Revert](https://2u-20.wistia.com/medias/r60i2dwhrw)
-
-### General
-
-Here are some alternative date/time libraries you can look into:
-
-  * 📖 [Luxon](https://moment.github.io/luxon/)
-
-  * 📖 [Day.js](https://day.js.org/)
-
-  * 📖 [date-fns](https://date-fns.org/)
-
-  * 📖 [js-Joda](https://js-joda.github.io/js-joda/)
+* The URL of the GitHub repository, with a unique name and a README describing the project
 
 - - -
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
