@@ -4,9 +4,12 @@
 //local storage?
 //if else for color changing in css based on time
 
-
-
-
+function getLocalStorage(key) {
+    let value = localStorage.getItem(key);
+    if (value) {
+        $(`#text${key}`).text(value);
+    }
+}
 
 $(document).ready(function () {
     $("#currentDay").text(moment().format("dddd, MMMM YYYY"));
@@ -17,11 +20,10 @@ $(document).ready(function () {
 
         var column1 = $('<div class="col-sm-2"> <p class="hour">' + formatHours(i) + '</p>');      
         var column2 = $(`<div class="col-sm-8 past"><textarea id=text${i} class="prompt" placeholder="Add event here..."></textarea>`);
-        var column3 = $(`<div class="col-sm-2"><button class="saveButton" id=${i}><i class="fas fa-save"></i></button>`);
+        var column3 = $(`<div class="col-sm-2"><button class="saveButton" id=${i}><i class="fas fa-coffee"></i></button>`);
 
         
-        row.append(column1, column2, column3);
-      
+        row.append(column1, column2, column3);      
 
         
         $(".container").append(row);
