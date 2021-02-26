@@ -4,7 +4,7 @@
 //local storage?
 //if else for color changing in css based on time
 
-function getLocalStorage(key) {
+function getLocal(key) {
     let value = localStorage.getItem(key);
     if (value) {
         $(`#text${key}`).text(value);
@@ -18,9 +18,9 @@ $(document).ready(function () {
        
         var row = $(`<div data-time=${i} id='${i}' class="row">`);
 
-        var column1 = $('<div class="col-sm-2"> <p class="hour">' + formatHours(i) + '</p>');      
-        var column2 = $(`<div class="col-sm-8 past"><textarea id=text${i} class="prompt" placeholder="Add event here..."></textarea>`);
-        var column3 = $(`<div class="col-sm-2"><button class="saveButton" id=${i}><i class="fas fa-coffee"></i></button>`);
+        var column1 = $('<div class="col-md-2"> <p class="hour">' + formatHours(i) + '</p>');      
+        var column2 = $(`<div class="col-md-8 past"><textarea id=text${i} class="prompt" placeholder="Add event here..."></textarea>`);
+        var column3 = $(`<div class="col-md-2"><button class="saveButton" id=${i}><i class="fas fa-coffee"></i></button>`);
 
         
         row.append(column1, column2, column3);      
@@ -28,7 +28,7 @@ $(document).ready(function () {
         
         $(".container").append(row);
 
-        getLocalStorage(i);
+        getLocal(i);
     }
 
     function formatHours(hour) {
@@ -40,5 +40,12 @@ $(document).ready(function () {
     formatHours();
 
     
+
+    var saveButton = $('.saveButton');
+    saveButton.on('click', function () {
+        let textId = $(this).attr('id');
+        let textEvent = $(this).parent().siblings().children('.prompt').val();
+        localStorage.setItem(textId, textEvent);
+    });
 
 })
