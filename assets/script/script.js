@@ -44,17 +44,19 @@ $(document).ready(function () {
         for (var i = 9; i < 18; i++) {
             if ($(`#${i}`).data("time") == currentTime) {
                 $(`#eventText${i}`).addClass("present");
+                
             } else if (currentTime < $(`#${i}`).data("time")) {
                 $(`#eventText${i}`).addClass("future");
+                
             } else {
                 $(`#eventText${i}`).addClass("past");
             }
         }
     }
 
-    setInterval(function () {
-        changeColor();
-    }, 1000);
+    
+    changeColor();
+   
     
 
     var saveButton = $('.saveButton');
