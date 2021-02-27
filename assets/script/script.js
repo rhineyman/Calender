@@ -4,10 +4,10 @@
 //local storage?
 //if else for color changing in css based on time
 
-function getLocal(key) {
-    let value = localStorage.getItem(key);
+function getLocal(store) {
+    let value = localStorage.getItem(store);
     if (value) {
-        $(`#text${key}`).text(value);
+        $(`#eventText${store}`).text(value);
     }
 }
 
@@ -19,7 +19,7 @@ $(document).ready(function () {
         var row = $(`<div data-time=${i} id='${i}' class="row">`);
 
         var column1 = $('<div class="col-md-2"> <p class="hour">' + formatHours(i) + '</p>');      
-        var column2 = $(`<div class="col-md-8 past"><textarea id=text${i} class="prompt" placeholder="Add event here..."></textarea>`);
+        var column2 = $(`<div class="col-md-8 past"><textarea id=eventText${i} class="prompt" placeholder="Add event here..."></textarea>`);
         var column3 = $(`<div class="col-md-2"><button class="saveButton" id=${i}><i class="fas fa-coffee"></i></button>`);
 
         
@@ -39,6 +39,22 @@ $(document).ready(function () {
     }
     formatHours();
 
+    function changeColor() {
+        var currentTime = new Date().getHours();
+        for (var i = 9; i < 18; i++) {
+            if ($(`#${i}`).data("time") == currentTime) {
+                $(`#eventText${i}`).addClass("present");
+            } else if (currentTime < $(`#${i}`).data("time")) {
+                $(`#eventText${i}`).addClass("future");
+            } else {
+                $(`#eventText${i}`).addClass("past");
+            }
+        }
+    }
+
+    setInterval(function () {
+        changeColor();
+    }, 1000);
     
 
     var saveButton = $('.saveButton');
